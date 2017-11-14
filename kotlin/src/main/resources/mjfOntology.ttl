@@ -1,0 +1,111 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://w3.org/2001/XMLSchema#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix : <http://michajonasfood.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#T-BOX
+: a owl:Ontology .
+:food a rdfs:Class .
+:food owl:sameAs dbo:Food .
+
+:fruit rdfs:subClassOf :food .
+:vegetable rdfs:subClassOf :food .
+:animalProduct rdfs:subClassOf :food .
+:spice rdfs:subClassOf :food .
+:meat rdfs:subClassOf :food .
+:fish rdfs:subClassOf :food .
+:cereal rdfs:subClassOf :food .
+:liquid rdfs:subClassOf :food .
+
+:dish rdfs:subClassOf :food .
+:contains rdfs:domain :dish .
+:contains rdfs:range :food .
+
+:taste a rdfs:Class .
+:smell a rdfs:Class .
+
+:Characteristic a rdf:Property .
+
+:tastes rdfs:subPropertyOf :Characteristic .
+:tastes rdfs:domain :food .
+:tastes rdfs:range :taste .
+
+:smells rdfs:subPropertyOf :Characteristic .
+:smells rdfs:domain :food .
+:smells rdfs:range :smell .
+
+:sugarAmountPer100g rdfs:subPropertyOf :Characteristic .
+:sugarAmountPer100g rdfs:domain :food .
+:sugarAmountPer100g rdfs:range xsd:double .
+
+:caloriesPer100g rdfs:subPropertyOf :Characteristic .
+:caloriesPer100g rdfs:domain :food .
+:caloriesPer100g rdfs:range xsd:integer .
+
+
+#A-BOX
+:lemon a :fruit .
+:lemon owl:sameAs dbpedia:Lemon .
+:lemon :tastes :sour .
+:lemon :smells :fresh .
+:lemon :sugarAmountPer100g "2.5"^^xsd:double .
+
+:peach a :fruit .
+:peach :tastes :sweet .
+:peach :smells :sweet .
+
+:grapefruit a :fruit .
+:grapefruit :tastes :bitter .
+:grapefruit :tastes :sweet .
+
+:chili a :spice .
+:chili :tastes :hot .
+
+:tomato a :vegetable .
+:tomato :tastes :sour .
+:tomato :tastes :umami .
+
+:bellPepper a :vegetable .
+:bellPepper :tastes :bitter .
+:bellPepper :tastes :sweet .
+
+:ginger a :vegetable .
+:ginger :tastes :hot .
+:ginger :tastes :bitter .
+:ginger :smells :fresh .
+
+:bacon a :meat .
+:bacon :tastes :salty .
+:bacon :tastes :umami .
+
+:cheese a :animalProduct .
+:cheese :tastes :salty .
+:cheese :tastes :umami .
+
+:egg a :animalProduct .
+:egg :caloriesPer100g "156"^^xsd:integer .
+
+:flour a :cereal .
+:flour :caloriesPer100g "364"^^xsd:integer .
+
+:water a :liquid .
+:water :caloriesPer100g "0"^^xsd:integer .
+
+:milk a :liquid .
+:milk a :animalProduct .
+
+:basil a :spice .
+
+:pizza rdfs:subClassOf :dish .
+:pizza :contains :flour .
+:pizza :contains :egg .
+:pizza :contains :water .
+
+:margarithaPizza a :pizza .
+:margarithaPizza :contains :cheese .
+:margarithaPizza :contains :tomato .
+:margarithaPizza :contains :cheese .
+:margarithaPizza :contains :basil .
