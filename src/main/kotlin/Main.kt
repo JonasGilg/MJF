@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
 	val model = ModelFactory.createDefaultModel()
 	model.read(Queries.javaClass.getResource("mjfOntology.ttl").file, "TURTLE")
 
-	val query = QueryFactory.create(Queries.fridgeContents)
+	val query = QueryFactory.create(Queries.foodWithCalories)
 
 	val result = QueryExecutionFactory.create(query, model)
 	val results = result.execSelect()
