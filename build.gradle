@@ -25,7 +25,7 @@ dependencies {
 	compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 	compile group: 'org.apache.jena', name: 'jena-arq', version: '3.5.0'
 	compile group: 'org.apache.cassandra', name: 'cassandra-all' , version: '0.8.1'
-
+	compile group: 'no.tornado', name: 'tornadofx', version: '1.7.12'
 }
 
 compileKotlin {
