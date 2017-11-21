@@ -53,7 +53,7 @@
 :lemon owl:sameAs dbpedia:Lemon .
 :lemon :tastes :sour .
 :lemon :smells :fresh .
-:lemon :sugarAmountPer100g "2.5"^^xsd:double .
+:lemon :sugarAmountPer100g 2.5 .
 
 :peach a :fruit .
 :peach foaf:name "peach" .
@@ -73,6 +73,7 @@
 :tomato foaf:name "tomato" .
 :tomato :tastes :sour .
 :tomato :tastes :umami .
+:tomato :caloriesPer100g 18 .
 
 :bellPepper a :vegetable .
 :bellPepper foaf:name "bell pepper" .
@@ -94,18 +95,19 @@
 :cheese foaf:name "cheese" .
 :cheese :tastes :salty .
 :cheese :tastes :umami .
+:cheese :caloriesPer100g 402 .
 
 :egg a :animalProduct .
 :egg foaf:name "egg" .
-:egg :caloriesPer100g "156"^^xsd:integer .
+:egg :caloriesPer100g 156 .
 
 :flour a :cereal .
 :flour foaf:name "flour" .
-:flour :caloriesPer100g "364"^^xsd:integer .
+:flour :caloriesPer100g 364 .
 
 :water a :liquid .
 :water foaf:name "water" .
-:water :caloriesPer100g "0"^^xsd:integer .
+:water :caloriesPer100g 0 .
 
 :milk a :liquid .
 :milk foaf:name "milk" .
@@ -113,15 +115,15 @@
 
 :basil a :spice .
 :basil foaf:name "basil" .
+:basil :caloriesPer100g 22 .
 
 :margarithaPizza a :dish .
-:margarithaPizza foaf:name "margaritha" .
+:margarithaPizza foaf:name "margarita" .
 :margarithaPizza :contains :flour .
 :margarithaPizza :contains :egg .
 :margarithaPizza :contains :water .
 :margarithaPizza :contains :cheese .
 :margarithaPizza :contains :tomato .
-:margarithaPizza :contains :cheese .
 :margarithaPizza :contains :basil .
 
 #the fridge
